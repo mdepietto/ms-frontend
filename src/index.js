@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// require('dotenv').config()
 // import 'semantic-ui-css/semantic.min.css'
 
 import { Auth0Provider } from '@auth0/auth0-react'
@@ -17,8 +16,8 @@ import NotePage from './routes/NotePage'
 ReactDOM.render(
     <BrowserRouter>
         <Auth0Provider
-            domain="dev-lbwyz5ki.us.auth0.com"
-            clientId="wowmgjNAzFo0IryKleVTHsvQZ8x19EPw"
+            domain={ process.env.REACT_APP_DOMAIN }
+            clientId={ process.env.REACT_APP_CLIENTID }
             redirectUri={ window.location.origin }
         >
             <Routes>
