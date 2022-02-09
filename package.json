@@ -1,4 +1,5 @@
 {
+  "homepage": "http://mdepietto.github.io/ms-frontend",
   "name": "test",
   "version": "0.1.0",
   "private": true,
@@ -25,6 +26,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "run-p server start",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
