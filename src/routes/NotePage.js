@@ -53,7 +53,7 @@ const NotePage = (props) => {
     const getData = async (api) => {
         setLoading(true)
         setLibrary([])
-        const newData = await fetch('apiMedia', {
+        const newData = await fetch('/apiMedia', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ api, userName })

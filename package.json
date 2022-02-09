@@ -18,7 +18,6 @@
     "semantic-ui-react": "^2.1.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://mdepietto.github.io/ms-frontend/",
   "scripts": {
     "start": "react-scripts start",
     "server": "nodemon server.js",
