@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import 'semantic-ui-css/semantic.min.css'
 
 import { Auth0Provider } from '@auth0/auth0-react'
 import { HashRouter, Routes, Route } from "react-router-dom"
@@ -10,14 +9,13 @@ import App from './App';
 import ShelfPage from './routes/ShelfPage'
 import NotePage from './routes/NotePage'
 
-// const domain = process.env.REACT_APP_AUTH0_DOMAIN
-// const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID
+const { REACT_APP_DOMAIN, REACT_APP_CLIENTID } = process.env
 
 ReactDOM.render(
     <HashRouter>
         <Auth0Provider
-            domain="dev-lbwyz5ki.us.auth0.com"
-            clientId="wowmgjNAzFo0IryKleVTHsvQZ8x19EPw"
+            domain={ REACT_APP_DOMAIN }
+            clientId={ REACT_APP_CLIENTID }
             redirectUri={ window.location.origin }
         >
             <Routes>
