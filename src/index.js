@@ -16,8 +16,8 @@ import NotePage from './routes/NotePage'
 ReactDOM.render(
     <HashRouter>
         <Auth0Provider
-            domain={ process.env.REACT_APP_DOMAIN }
-            clientId={ process.env.REACT_APP_CLIENTID }
+            domain="dev-lbwyz5ki.us.auth0.com"
+            clientId="wowmgjNAzFo0IryKleVTHsvQZ8x19EPw"
             redirectUri={ window.location.origin }
         >
             <Routes>
