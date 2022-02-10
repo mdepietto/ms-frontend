@@ -4,7 +4,7 @@ import './index.css';
 // import 'semantic-ui-css/semantic.min.css'
 
 import { Auth0Provider } from '@auth0/auth0-react'
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { HashRouter, Routes, Route } from "react-router-dom"
 
 import App from './App';
 import ShelfPage from './routes/ShelfPage'
@@ -14,7 +14,7 @@ import NotePage from './routes/NotePage'
 // const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID
 
 ReactDOM.render(
-    <BrowserRouter>
+    <HashRouter>
         <Auth0Provider
             domain={ process.env.REACT_APP_DOMAIN }
             clientId={ process.env.REACT_APP_CLIENTID }
@@ -32,6 +32,6 @@ ReactDOM.render(
                 <Route path='showNotes' element={ <NotePage name='shows' table='Show_Notes' /> } />
             </Routes>
         </Auth0Provider>
-    </BrowserRouter>,
+    </HashRouter>,
     document.getElementById('root')
 )
