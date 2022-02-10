@@ -21,7 +21,7 @@ ReactDOM.render(
             redirectUri={ window.location.origin }
         >
             <Routes>
-                <Route path='/ms-frontend/' element={ <App /> } />
+                <Route path='/' element={ <App /> } />
 
                 <Route path='books' element={ <ShelfPage name='books' /> } />
                 <Route path='movies' element={ <ShelfPage name='movies' /> } />
