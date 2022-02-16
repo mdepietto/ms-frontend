@@ -20,7 +20,7 @@ const HomePage = () => {
     const userName = useAuth0().user
 
     const getCount = async (api, count) => {
-        const newData = await fetch('/apiMedia', {
+        const newData = await fetch('https://the-media-shelf.herokuapp.com/apiMedia', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ api, userName })

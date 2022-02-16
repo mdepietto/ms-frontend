@@ -39,7 +39,7 @@ const Dropdown = (props) => {
     if (name === 'shows') sortOptions[1].text = 'Season'
 
     const getCount = async (api, count) => {
-        const newData = await fetch('/apiMedia', {
+        const newData = await fetch('https://the-media-shelf.herokuapp.com/apiMedia', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ api, userName })
@@ -74,7 +74,7 @@ const Dropdown = (props) => {
             setLoading(false)
             return await getData(api)
         }
-        const newData = await fetch('/notesByTitle', {
+        const newData = await fetch('https://the-media-shelf.herokuapp.com/notesByTitle', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ api, title, userName })

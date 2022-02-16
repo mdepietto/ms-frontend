@@ -12,7 +12,7 @@ const NoteShelf = (props) => {
     }, [ name ])
 
     const deleteNote = async (api, media) => {
-        await fetch('/deleteMedia', {
+        await fetch('https://the-media-shelf.herokuapp.com/deleteMedia', {
             method: 'DELETE',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ api, media })

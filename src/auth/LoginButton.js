@@ -4,7 +4,7 @@ import { Button } from 'semantic-ui-react'
 
 const LoginButton = () => {
     
-    const { loginWithRedirect, isAuthenticated } = useAuth0();
+    const { loginWithPopup, isAuthenticated } = useAuth0();
 
     return (
         !isAuthenticated && (
@@ -12,7 +12,7 @@ const LoginButton = () => {
                 inverted
                 color='olive'
                 size='massive'
-                onClick={ () => loginWithRedirect() }
+                onClick={ () => loginWithPopup() }
             >Log in</Button>
         )
     )

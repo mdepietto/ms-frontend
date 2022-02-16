@@ -34,7 +34,7 @@ const NotePage = (props) => {
     useEffect(() => {
         const getDropdown = async (titles, setTitles, api) => {
             if (!titles[1]) {
-                const newData = await fetch('/apiMedia', {
+                const newData = await fetch('https://the-media-shelf.herokuapp.com/apiMedia', {
                     method: 'POST',
                     headers: { 'content-type': 'application/json' },
                     body: JSON.stringify({ api, userName })
@@ -53,7 +53,7 @@ const NotePage = (props) => {
     const getData = async (api) => {
         setLoading(true)
         setLibrary([])
-        const newData = await fetch('/apiMedia', {
+        const newData = await fetch('https://the-media-shelf.herokuapp.com/apiMedia', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ api, userName })
@@ -67,7 +67,7 @@ const NotePage = (props) => {
     }
 
     const editMedia = async () => {
-        await fetch('/editNote', {
+        await fetch('https://the-media-shelf.herokuapp.com/editNote', {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ table, newNote, id })
@@ -115,7 +115,7 @@ const NotePage = (props) => {
 
                 { noteForm && <NoteForm
                     name='books'
-                    path='/addBookNote'
+                    path='https://the-media-shelf.herokuapp.com/addBookNote'
                     border='2px solid rgb(202, 237, 114)'
                     titles={ bookTitles }
                     user={ userName }
@@ -177,7 +177,7 @@ const NotePage = (props) => {
                 }
 
                 { noteForm && <NoteForm name='movies'
-                    path='/addMovieNote'
+                    path='https://the-media-shelf.herokuapp.com/addMovieNote'
                     border='2px solid rgb(235, 229, 52)'
                     titles={ movieTitles }
                     user={ userName }
@@ -240,7 +240,7 @@ const NotePage = (props) => {
 
                 { noteForm && <NoteForm
                     name='shows'
-                    path='/addShowNote'
+                    path='https://the-media-shelf.herokuapp.com/addShowNote'
                     border='2px solid rgb(242, 129, 7)'
                     titles={ showTitles }
                     user={ userName }

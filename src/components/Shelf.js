@@ -15,7 +15,7 @@ const Shelf = (props) => {
         const getData = async (api) => {
             setLoading(true)
             setLibrary([])
-            const newData = await fetch('/apiMedia', {
+            const newData = await fetch('https://the-media-shelf.herokuapp.com/apiMedia', {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify({ api, userName })
@@ -33,13 +33,13 @@ const Shelf = (props) => {
 
     const deleteMedia = async (api, media) => {
         setLoading(true)
-        await fetch('/deleteMedia', {
+        await fetch('https://the-media-shelf.herokuapp.com/deleteMedia', {
             method: 'DELETE',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ api, media })
         })
         setLibrary([])
-        const newData = await fetch('/apiMedia', {
+        const newData = await fetch('https://the-media-shelf.herokuapp.com/apiMedia', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ api, userName })

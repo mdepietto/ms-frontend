@@ -19,7 +19,7 @@ const ShelfPage = (props) => {
             <div className='body'>
                 { shelfForm && <ShelfForm
                     name='books'
-                    path='/addBook'
+                    path='https://the-media-shelf.herokuapp.com/addBook'
                     border='2px solid rgb(202, 237, 114)'
                     shelf={ shelf }
                     setShelf={ setShelf }
@@ -59,7 +59,7 @@ const ShelfPage = (props) => {
 
                 { shelfForm && <ShelfForm
                     name='movies'
-                    path='/addMovie'
+                    path='https://the-media-shelf.herokuapp.com/addMovie'
                     border='2px solid rgb(235, 229, 52)'
                     shelf={ shelf }
                     setShelf={ setShelf }
@@ -99,7 +99,7 @@ const ShelfPage = (props) => {
 
                 { shelfForm && <ShelfForm
                     name='shows'
-                    path='/addShow'
+                    path='https://the-media-shelf.herokuapp.com/addShow'
                     border='2px solid rgb(242, 129, 7)'
                     shelf={ shelf }
                     setShelf={ setShelf }

@@ -9,13 +9,18 @@ import App from './App';
 import ShelfPage from './routes/ShelfPage'
 import NotePage from './routes/NotePage'
 
-const { REACT_APP_DOMAIN, REACT_APP_CLIENTID } = process.env
+// Auth0 redirect after login
+
+const { REACT_APP_AUTH0_DOMAIN, REACT_APP_AUTH0_CLIENT_ID } = process.env
 
 ReactDOM.render(
     <HashRouter>
         <Auth0Provider
-            domain={ REACT_APP_DOMAIN }
-            clientId={ REACT_APP_CLIENTID }
+            domain={ REACT_APP_AUTH0_DOMAIN }
+            clientId={ REACT_APP_AUTH0_CLIENT_ID }
+            // domain="dev-lbwyz5ki.us.auth0.com"
+            // clientId="wowmgjNAzFo0IryKleVTHsvQZ8x19EPw"
+            // redirectUri="https://mdepietto.github.io/ms-frontend"
             redirectUri={ window.location.origin }
         >
             <Routes>
