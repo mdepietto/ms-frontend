@@ -2,18 +2,22 @@ import React, { useState, useEffect } from 'react'
 import { Button } from 'semantic-ui-react'
 import { useAuth0 } from '@auth0/auth0-react';
 import Loader from './Loader';
+import NoContent from '../components/NoContent'
 
 const Shelf = (props) => {
 
     const { name, library, setLibrary } = props
 
     const [ loading, setLoading ] = useState(false)
+    
+    const [ noContent, setNoContent ] = useState(false)
 
     const userName = useAuth0().user
 
     useEffect(() => {
         const getData = async (api) => {
             setLoading(true)
+            setNoContent(false)
             setLibrary([])
             const newData = await fetch('https://the-media-shelf.herokuapp.com/apiMedia', {
                 method: 'POST',
@@ -21,6 +25,7 @@ const Shelf = (props) => {
                 body: JSON.stringify({ api, userName })
             })
             .then(res => res.json())
+            if (!newData[0]) setNoContent(true)
             newData.map(media => {
                 return setLibrary(prev => [ ...prev, media ])
             })
@@ -75,6 +80,7 @@ const Shelf = (props) => {
         return (
             <div>
                 { loading && <Loader color={ 'rgb(202, 237, 114)' } /> }
+                { noContent && <NoContent /> }
                 { library.map(book => {
                     return (
                         <div className='shelf' key={ book.id } style={{ border: '2px solid rgb(202, 237, 114)' }}>
@@ -97,6 +103,7 @@ const Shelf = (props) => {
         return (
             <div>
                 { loading && <Loader color={ 'rgb(235, 229, 52)' } /> }
+                { noContent && <NoContent /> }
                 { library.map(movie => {
                     return (
                         <div className='shelf' key={ movie.id } style={{ border: '2px solid rgb(235, 229, 52)' }}>
@@ -118,6 +125,7 @@ const Shelf = (props) => {
         return (
             <div>
                 { loading && <Loader color={ 'rgb(242, 129, 7)' } /> }
+                { noContent && <NoContent /> }
                 { library.map(show => {
                     return (
                         <div className='shelf' key={ show.id } style={{ border: '2px solid rgb(242, 129, 7)' }}>

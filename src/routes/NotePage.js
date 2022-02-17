@@ -10,6 +10,7 @@ import NoteForm from '../components/NoteForm';
 import NavTop from '../components/NavTop'
 import NavBottom from '../components/NavBottom'
 import EditWindow from '../components/EditWindow';
+import NoContent from '../components/NoContent';
 
 const NotePage = (props) => {
 
@@ -23,6 +24,7 @@ const NotePage = (props) => {
     const [ noteShelf, setNoteShelf ] = useState(true)
     const [ noteForm, setNoteForm ] = useState(false)
     const [ editWindow, setEditWindow ] = useState(false)
+    const [ noContent, setNoContent ] = useState(false)
 
     const [ newNote, setNewNote ] = useState('')
     const [ id, setId ] = useState()
@@ -52,6 +54,7 @@ const NotePage = (props) => {
 
     const getData = async (api) => {
         setLoading(true)
+        setNoContent(false)
         setLibrary([])
         const newData = await fetch('https://the-media-shelf.herokuapp.com/apiMedia', {
             method: 'POST',
@@ -59,6 +62,7 @@ const NotePage = (props) => {
             body: JSON.stringify({ api, userName })
         })
         .then(res => res.json())
+        if (!newData[0]) setNoContent(true)
         newData.map(media => {
             media.note_date = media.note_date.slice(0, 10)
             return setLibrary(prev => [ ...prev, media ])
@@ -104,6 +108,8 @@ const NotePage = (props) => {
             <div className='body'>
 
                 { loading && <Loader color={ 'rgb(202, 237, 114)' } /> }
+
+                { noContent && <NoContent /> }
 
                 { editWindow && 
                     <div className='forms' style={{ position: 'fixed', border: '2px solid rgb(202, 237, 114)' }}>
@@ -169,6 +175,8 @@ const NotePage = (props) => {
 
                 { loading && <Loader color={ 'rgb(235, 229, 52)' } /> }
 
+                { noContent && <NoContent /> }
+
                 { editWindow && 
                     <div className='forms' style={{ position: 'fixed', border: '2px solid rgb(235, 229, 52)' }}>
                         <EditWindow newNote={ newNote } setNewNote={ setNewNote } />
@@ -230,6 +238,8 @@ const NotePage = (props) => {
             <div className='body'>
 
                 { loading && <Loader color={ 'rgb(242, 129, 7)' } /> }
+
+                { noContent && <NoContent /> }
 
                 { editWindow && 
                     <div className='forms' style={{ position: 'fixed', border: '2px solid rgb(242, 129, 7)' }}>
