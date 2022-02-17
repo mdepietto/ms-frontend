@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ms-frontend/static/css/main.e0a89235.css",
-    "main.js": "/ms-frontend/static/js/main.2c323a0b.js",
+    "main.js": "/ms-frontend/static/js/main.2436c8db.js",
     "static/media/book1.jpg": "/ms-frontend/static/media/book1.cd49e9cac761f9733e0f.jpg",
     "index.html": "/ms-frontend/index.html",
     "main.e0a89235.css.map": "/ms-frontend/static/css/main.e0a89235.css.map",
-    "main.2c323a0b.js.map": "/ms-frontend/static/js/main.2c323a0b.js.map"
+    "main.2436c8db.js.map": "/ms-frontend/static/js/main.2436c8db.js.map"
   },
   "entrypoints": [
     "static/css/main.e0a89235.css",
-    "static/js/main.2c323a0b.js"
+    "static/js/main.2436c8db.js"
   ]
 }
