@@ -12,7 +12,7 @@ const LogoutButton = () => {
                 inverted
                 color='red'
                 size='big'
-                onClick={ () => logout({ returnTo: window.location.origin }) }
+                onClick={ () => logout({ returnTo: "https://mdepietto.github.io/ms-frontend" }) }
             >
                 Log out
             </Button>
